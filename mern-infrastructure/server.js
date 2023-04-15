@@ -11,6 +11,8 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'dist')));
 
+//home route
+// app.use('/', require('./routes/home'))
 //routes
 app.use('/api/users', require('./routes/api/users'));
 //catch all

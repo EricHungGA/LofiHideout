@@ -1,9 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import { logOut } from '../../utilities/users-service';
+import { Routes, Route } from 'react-router-dom';
 
 
-export default function NavBar({setUser}) {
+export default function NavBar({user, setUser}) {
 
   function handleLogOut() {
     logOut();
@@ -12,12 +13,20 @@ export default function NavBar({setUser}) {
 
   return (
     <nav>
+      <Link to="/">Home</Link>
+      &nbsp; | &nbsp;
       <Link to="/orders">Order History</Link>
       &nbsp; | &nbsp;
       <Link to="/orders/new">New Order</Link>
       &nbsp; | &nbsp;
-      <Link onClick={handleLogOut}>LogOut</Link>
+      {user ? <Link onClick={handleLogOut}>LogOut</Link>
+      :
+      <>
+      <Link to="/api/users/signup">Login</Link>
+      </>
+  }
     </nav>
   )
 }
 
+// <AuthPage setUser={setUser} />
