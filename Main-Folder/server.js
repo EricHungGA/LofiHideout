@@ -14,11 +14,12 @@ app.use(express.static(path.join(__dirname, 'dist')));
 //home route
 // app.use('/', require('./routes/home'))
 //routes
+app.use('/api/categories', require('./src/utilities/categories-api'));
 app.use('/api/users', require('./routes/api/users'));
 //catch all
-app.get('/*', function (req, res) {
-  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
-});
+// app.get('/*', function (req, res) {
+//   res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+// });
 
 //listener
 const port = process.env.PORT || 3000;
