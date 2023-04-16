@@ -38,7 +38,7 @@ export default function App() {
             {/* default redirect */}
             <Route path="*" element={<Navigate to="/"/>} />
           </Routes>
-          <p>{categories.map((c) => c.video)}</p>
+          <p>{categories.map((c) => c.name)}</p>
     </main>
   )
 }
