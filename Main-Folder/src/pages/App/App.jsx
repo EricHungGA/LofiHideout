@@ -5,6 +5,7 @@ import { Routes, Route, Navigate } from 'react-router-dom'
 import NavBar from '../../components/NavBar/NavBar'
 import { getUser } from '../../utilities/users-service'
 import HomePage from '../HomePage/HomePage'
+import CategoryCard from '../../components/CategoryCard/CategoryCard'
 
 export default function App() {
 
@@ -19,7 +20,6 @@ export default function App() {
           throw new Error('Network response was not ok');
         }
         const data = await response.json();
-        console.log(data);
         setCategories(data);
       } catch (error) {
         console.error('Error fetching categories:', error);
@@ -38,7 +38,7 @@ export default function App() {
             {/* default redirect */}
             <Route path="*" element={<Navigate to="/"/>} />
           </Routes>
-          <p>{categories.map((c) => c.name)}</p>
+          {categories.map((c, idx) => <CategoryCard key={idx} category={c}/>)}
     </main>
   )
 }
