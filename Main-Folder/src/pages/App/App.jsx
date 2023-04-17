@@ -5,7 +5,7 @@ import { Routes, Route, Navigate } from 'react-router-dom'
 import NavBar from '../../components/NavBar/NavBar'
 import { getUser } from '../../utilities/users-service'
 import HomePage from '../HomePage/HomePage'
-import CategoryCard from '../../components/CategoryCard/CategoryCard'
+import CategoryDetailPage from '../CategoryDetailPage/CategoryDetailPage'
 
 export default function App() {
 
@@ -33,12 +33,12 @@ export default function App() {
     <main className="App">
           <NavBar user={user} setUser={setUser}/>
           <Routes>
-            <Route path="/" element={<HomePage />} />
+            <Route path="/" element={<HomePage categories={categories}/>} />
             <Route path="/api/users/signup" element={<AuthPage setUser={setUser}/>} />
+            <Route path="/room/:categoryName" element={<CategoryDetailPage categories={categories}/>} />
             {/* default redirect */}
             <Route path="*" element={<Navigate to="/"/>} />
           </Routes>
-          {categories.map((c, idx) => <CategoryCard key={idx} category={c}/>)}
     </main>
   )
 }
