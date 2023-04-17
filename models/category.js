@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const categorySchema = new Schema({
     name: {type: String},
-    video: {type: String}
+    videoId: {type: String}
 })
 
 module.exports = mongoose.model('Category', categorySchema);

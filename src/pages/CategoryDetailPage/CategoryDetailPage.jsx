@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react'
 export default function CategoryDetailPage({categories}) {
     const { categoryName } = useParams();
     const [category, setCategory] = useState(null);
+    
 
     useEffect(() => {
         async function fetchData() {
@@ -26,7 +27,11 @@ export default function CategoryDetailPage({categories}) {
       return (
         <div>
           {category.name}
-          {category.video}
+          <iframe id="ytplayer" type="text/html" width="720" height="405"
+          src={`https://www.youtube.com/embed/${category.videoId}?&loop=1&controls=1`}
+          frameBorder="0" allowFullScreen></iframe>
+
+          <div id="player"></div>
         </div>
       );
 }
