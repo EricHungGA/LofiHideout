@@ -14,14 +14,14 @@ export default function CategoryCard({category}) {
       <div class="rounded-2xl absolute inset-0 h-full w-full object-cover opacity-75 transition-opacity group-hover:opacity-0">
       <img
         alt="Developer"
-        src="https://news.harvard.edu/wp-content/uploads/2022/11/081022_Harvard_Forest_54-1200x800.jpg"
+        src="https://i.pinimg.com/564x/3a/65/6d/3a656d679cdd9e5ad14ab231ef983abe.jpg"
         class="rounded-2xl absolute inset-0 object-cover h-full w-full transition-opacity"
       />
       </div>
       <div class="rounded-2xl absolute inset-0 h-full w-full object-cover opacity-0 transition-opacity group-hover:opacity-100">
       <img
         alt="Developer"
-        src="https://images.pexels.com/photos/6750412/pexels-photo-6750412.jpeg?cs=srgb&dl=pexels-chris-f-6750412.jpg&fm=jpg"
+        src="https://i.pinimg.com/564x/42/63/4f/42634f11d9c526fbee46543707500311.jpg"
         class="rounded-2xl absolute inset-0 object-cover h-full w-full"
       />
       </div>
