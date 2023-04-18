@@ -1,8 +1,4 @@
-.card {
-    border: 0.2rem solid;
-    margin: 1rem;
-}
-
-.card:hover {
-    color:blueviolet;
-}
+.rounded-2xl .transition-opacity {
+    transition-property: opacity !important;
+    transition-duration: 2s !important;
+}  
