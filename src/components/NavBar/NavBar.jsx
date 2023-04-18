@@ -33,7 +33,7 @@ export default function NavBar({user, setUser}) {
           <img src="https://i.pinimg.com/564x/2a/3a/da/2a3adacf3ac01f5248ffd352dcece5a2.jpg"></img>
         </div>
 
-        <div class="hidden sm:flex sm:items-center">
+        <div class="hidden sm:flex sm:items-center text-center">
           <a href="/" class="text-slate-400 text-sm font-semibold hover:text-blue-700 mr-4">Lofi Hideout</a>
         </div>
 
