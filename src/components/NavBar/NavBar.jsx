@@ -34,7 +34,7 @@ export default function NavBar({user, setUser}) {
         </div>
 
         <div class="hidden sm:flex sm:items-center text-center">
-          <a href="/" class="text-slate-400 text-sm font-semibold hover:text-blue-700 mr-4">Lofi Hideout</a>
+          <a href="/" class="text-slate-400 text-md font-semibold tracking-wider hover:text-blue-700">Lofi Hideout</a>
         </div>
 
         <div class="hidden sm:flex sm:items-center">
