@@ -27,14 +27,14 @@ export default function CategoryCard({category}) {
       </div>
       </Link>
       <div class="relative p-4 sm:p-6 lg:p-8 ">
-        <p class="text-sm font-medium uppercase tracking-widest text-pink-500">
+        <p class="text-sm font-medium uppercase tracking-widest text-indigo-400">
           {category.ambienceType}
         </p>
-        <p class="text-xl font-bold text-white/70 sm:text-2xl">{category.name}</p>
+        <p class="text-xl font-bold text-white/70 sm:text-2xl tracking-wider">{category.name}</p>
         <div class="mt-4 sm:mt-4 lg:mt-4">
         <div
           class="translate-y-8 transform opacity-0 transition-all duration-1000 group-hover:translate-y-0 group-hover:opacity-100">
-          <p class="text-sm text-white">
+          <p class="text-xl text-white/60">
             Enter Room
           </p>
         </div>
