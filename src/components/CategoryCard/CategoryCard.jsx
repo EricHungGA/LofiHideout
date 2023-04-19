@@ -12,7 +12,7 @@ export default function CategoryCard({category}) {
     <div class="ring-8 ring-slate-600 ring-inset absolute inset-0 rounded-2xl"></div>
     <div class="p-8">
     <Link to={`/room/${category.name}`}>
-      <div class="rounded-2xl absolute inset-0 h-full w-full object-cover opacity-75 transition-opacity group-hover:opacity-0 ">
+      <div class="rounded-2xl absolute inset-0 h-full w-full object-cover opacity-75 transition-opacity group-hover:opacity-0">
       <img
         alt="Developer"
         src={category.cardImage}
