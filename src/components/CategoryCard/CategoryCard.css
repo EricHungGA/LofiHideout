@@ -19,4 +19,7 @@
     animation-iteration-count: infinite;
     animation-direction: alternate;
   }
+
+  .rounded-2xl .ring {
+  }
   
