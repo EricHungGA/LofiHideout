@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import { logOut } from '../../utilities/users-service';
 import { Routes, Route } from 'react-router-dom';
+import './NavBar.css'
 
 
 export default function NavBar({user, setUser}) {
@@ -26,7 +27,7 @@ export default function NavBar({user, setUser}) {
 
 
 <div>
-	<div class="bg-transparent ring-4 ring-slate-800/50 ring-inset">
+	<div class="bg-transparent animate-fade-in-and-out">
     <div class="container mx-auto px-4">
       <div class="flex items-center justify-between py-4">
         <div class="w-10 h-10 opacity-70">
