@@ -26,25 +26,24 @@ export default function NavBar({user, setUser}) {
 
 
 <div>
-	<div class="bg-black shadow">
+	<div class="bg-transparent ring-4 ring-slate-800/50 ring-inset">
     <div class="container mx-auto px-4">
       <div class="flex items-center justify-between py-4">
-        <div class="w-10 h-10">
+        <div class="w-10 h-10 opacity-70">
           <img src="https://i.pinimg.com/564x/2a/3a/da/2a3adacf3ac01f5248ffd352dcece5a2.jpg"></img>
         </div>
-
         <div class="hidden sm:flex sm:items-center text-center">
-          <a href="/" class="text-slate-400 text-md font-semibold tracking-wider hover:text-blue-700">Lofi Hideout</a>
+          <a href="/" class="text-orange-200/40 text-2xl italic tracking-wide hover:text-neutral-700/70">Lofi Hideout</a>
         </div>
 
         <div class="hidden sm:flex sm:items-center">
-        {user ? <a onClick={handleLogOut} class="text-gray-800 text-sm font-semibold border px-4 py-2 rounded-lg hover:text-blue-700 hover:border-blue-700">Logout</a>
+        {user ? <a onClick={handleLogOut} class="text-slate-400/90 text-sm font-semibold border px-4 py-2 rounded-lg hover:text-indigo-600/70 hover:border-indigo-600/70">Logout</a>
             :
-            <Link to="/api/users/signup" class="text-slate-400 text-sm font-semibold border px-4 py-2 rounded-lg hover:text-blue-700 hover:border-blue-700">Sign up</Link>
+            <Link to="/api/users/signup" class="text-slate-400/90 text-sm font-semibold border px-4 py-2 rounded-lg hover:text-indigo-600/70 hover:border-indigo-600/70">Sign up</Link>
         }
         </div>
       </div>
-      
+
       <div class="block sm:hidden bg-white border-t-2 py-2">
         <div class="flex flex-col">
           <a class="text-gray-800 text-sm font-semibold hover:text-purple-600 mb-1">Lofi Hideout</a>
