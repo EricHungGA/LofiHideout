@@ -35,7 +35,7 @@ export default function App() {
           <Routes>
             <Route path="/" element={<HomePage categories={categories}/>} />
             <Route path="/api/users/signup" element={<AuthPage setUser={setUser}/>} />
-            <Route path="/room/:categoryName" element={<CategoryDetailPage categories={categories}/>} />
+            <Route path="/room/:videoId" element={<CategoryDetailPage categories={categories}/>} />
             {/* default redirect */}
             <Route path="*" element={<Navigate to="/"/>} />
           </Routes>

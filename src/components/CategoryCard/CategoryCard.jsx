@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './CategoryCard.css'
 import { Link } from 'react-router-dom'
 
@@ -11,7 +11,7 @@ export default function CategoryCard({category}) {
     <div class="group relative block bg-black rounded-2xl h-128 w-72 border border-slate-400 transition overflow-hidden">
     <div class="ring-8 ring-slate-600 ring-inset absolute inset-0 rounded-2xl"></div>
     <div class="p-8">
-    <Link to={`/room/${category.name}`}>
+    <Link to={`/room/${category.videoId}`}>
       <div class="rounded-2xl absolute inset-0 h-full w-full object-cover opacity-75 transition-opacity group-hover:opacity-0">
       <img
         alt="Developer"
