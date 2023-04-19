@@ -33,18 +33,18 @@ export default function SignUpForm({setUser}) {
   const disable = formData.password !== formData.confirm;
 
   return (
-    <div>
-      <div className="form-container">
+    <div class="rounded-xl border border-neutral-500/50 w-128 h-28 text-md text-neutral-500">
+      <div className="form-container mt-10">
         <form autoComplete="off" onSubmit={handleSubmit}>
-          <label>Name</label>
-          <input type="text" name="name" value={formData.name} onChange={handleChange} required />
-          <label>Email</label>
-          <input type="email" name="email" value={formData.email} onChange={handleChange} required />
-          <label>Password</label>
-          <input type="password" name="password" value={formData.password} onChange={handleChange} required />
-          <label>Confirm</label>
-          <input type="password" name="confirm" value={formData.confirm} onChange={handleChange} required />
-          <button type="submit" disabled={disable}>SIGN UP</button>
+          <label class="mr-4 ml-4" >Name</label>
+          <input class="text-neutral-300 rounded-md bg-neutral-500/50" type="text" name="name" value={formData.name} onChange={handleChange} required />
+          <label class="mr-4 ml-4">Email</label>
+          <input class="text-neutral-300 rounded-md bg-neutral-500/50" type="email" name="email" value={formData.email} onChange={handleChange} required />
+          <label class="mr-4 ml-4">Password</label>
+          <input class="text-neutral-300 rounded-md bg-neutral-500/50" type="password" name="password" value={formData.password} onChange={handleChange} required />
+          <label class="text-neutral-300 mr-4 ml-4">Confirm</label>
+          <input class="text-neutral-300 rounded-md bg-neutral-500/50" type="password" name="confirm" value={formData.confirm} onChange={handleChange} required />
+          <button  class="rounded-xl border border-neutral-500/50 mr-4 ml-4 w-24 h-8 animate-fade-in-and-out shadow-lg shadow-blue-500/50" type="submit" disabled={disable}>SIGN UP</button>
         </form>
       </div>
       <p className="error-message">&nbsp;{formData.error}</p>
