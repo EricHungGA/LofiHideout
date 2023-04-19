@@ -2,3 +2,21 @@
     transition-property: opacity !important;
     transition-duration: 2s !important;
 }  
+
+@keyframes hover {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-12px);
+    }
+  }
+  
+  .animate-hover-slow {
+    animation-name: hover;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
+  

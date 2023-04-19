@@ -5,7 +5,10 @@ module.exports = {
     extend: {
       height: {
         '128': '30rem',
-      }
+      },
+      animation: {
+        text: "text 5s ease infinite",
+      },
     },
   },
   plugins: [],

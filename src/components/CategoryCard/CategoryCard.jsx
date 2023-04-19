@@ -7,11 +7,11 @@ export default function CategoryCard({category}) {
 
   return (
 <>
-    <div class="flex justify-center">
-    <div class="group relative block bg-black rounded-2xl h-128 w-72 border border-slate-400 transition overflow-hidden">
+    <div class="flex justify-center animate-hover-slow">
+    <div class="group relative block bg-black rounded-2xl h-128 w-72 border border-slate-400 transition overflow-hidden ring-8 ring-slate-600 ring-inset">
     <div class="p-8">
     <Link to={`/room/${category.name}`}>
-      <div class="rounded-2xl absolute inset-0 h-full w-full object-cover opacity-75 transition-opacity group-hover:opacity-0">
+      <div class="rounded-2xl absolute inset-0 h-full w-full object-cover opacity-75 transition-opacity group-hover:opacity-0 ">
       <img
         alt="Developer"
         src={category.cardImage}
