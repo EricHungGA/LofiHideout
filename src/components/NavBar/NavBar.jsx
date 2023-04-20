@@ -48,10 +48,10 @@ export default function NavBar({user, setUser}) {
         }
         </div>
       </div>
-      <div class="block sm:hidden bg-white border-t-2 py-2">
+      <div class="block sm:hidden">
         <div class="flex flex-col">
           <a class="text-gray-800 text-sm font-semibold hover:text-purple-600 mb-1">Lofi Hideout</a>
-          <div class="flex justify-between items-center border-t-2 pt-2">
+          <div class="flex justify-between items-center pt-2">
           </div>
         </div>
       </div>

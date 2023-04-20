@@ -8,6 +8,7 @@ import HomePage from '../HomePage/HomePage'
 import CategoryDetailPage from '../CategoryDetailPage/CategoryDetailPage'
 import * as categoriesAPI from '../../utilities/categories-api'
 import SendFormPage from '../SendFormPage/SendFormPage'
+import MyFormPage from '../MyFormPage/MyFormPage'
 
 export default function App() {
 
@@ -34,6 +35,7 @@ export default function App() {
             <Route path="/api/users/signup" element={<AuthPage setUser={setUser}/>} />
             <Route path="/room/:videoId" element={<CategoryDetailPage categories={categories}/>} />
             <Route path="/sendForm" element={<SendFormPage user={user}/>} />
+            <Route path="/myforms" element={<MyFormPage user={user}/>} />
             {/* default redirect */}
             <Route path="*" element={<Navigate to="/"/>} />
           </Routes>

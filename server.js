@@ -12,13 +12,19 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, 'dist')));
 app.use(require('./config/checkToken'));
 
+
 //home route
 // app.use('/', require('./routes/home'))
 //routes
+const ensureLoggedIn = require('./config/ensureLoggedIn');
 app.use('/api/categories', require('./routes/api/categories'));
+app.use('/api/users/sendform', ensureLoggedIn, require('./routes/api/users'));
 app.use('/api/users', require('./routes/api/users'));
-// app.use('/api/users/sendform', require('./routes/api/users'));
+
 //catch all
+app.get('/*', function (req, res) {
+  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+});
 
 // Error handler to check if route exists
 app.use(function (req, res) {
