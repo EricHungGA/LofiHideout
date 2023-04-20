@@ -24,31 +24,37 @@ export default function CategoryDetailPage({categories}) {
         return <div>Loading...</div>;
       }
       
-      console.log(category.bImage, category.bAmbience)
+      console.log(category.bAmbienceOpacity)
     
       return (
         <>
-        <div
-          className={`fixed top-0 left-0 w-full h-full z-[-2] opacity-${category.bImageOpacity} bg-cover bg-no-repeat bg-center`}
-          style={{ backgroundImage: `url('${category.bImage}')` }}
-        ></div>
+  <div
+    style={{ backgroundImage: `url('${category.bImage}')` }}
+    className={`background-image`}
+  ></div>
 
-        <div
-          className={`fixed top-0 left-0 w-full h-full z-[-1] opacity-${category.bAmbienceOpacity} bg-cover bg-no-repeat bg-center`}
-          style={{ backgroundImage: `url('${category.bAmbience}')` }}
-        ></div>
+  <div
+    style={{ backgroundImage: `url('${category.bAmbience}')` }}
+    className={`background-ambience`}
+  ></div>
+  <div>
+    <p class="text-sm font-medium uppercase tracking-widest text-indigo-400">
+      {category.ambienceType}
+    </p>
+    <p class="text-xl font-bold text-white/60 sm:text-2xl tracking-wider">{category.name}</p>
+    <div class="flex justify-center">
+      <iframe
+        class={`w-3/5 h-96 border-8 border-slate-500/20 border-inset opacity-80 shadow-lg shadow-${category.shadow}-400/50 mt-4`}
+        id="ytplayer"
+        type="text/html"
+        src={`https://www.youtube.com/embed/${category.videoId}?&loop=1&controls=1`}
+        frameBorder="0"
+        allowFullScreen
+      ></iframe>
+      <div id="player"></div>
+    </div>
+  </div>
+</>
 
-          <p class="text-sm font-medium uppercase tracking-widest text-indigo-400">
-          {category.ambienceType}
-          </p>          
-          <p class="text-xl font-bold text-white/60 sm:text-2xl tracking-wider">{category.name}</p>
-          <div class="flex justify-center">
-          <iframe class={` w-3/5 h-96 border-8 border-slate-500/20 border-inset opacity-80 shadow-lg shadow-${category.shadow}-400/50 mt-4" id="ytplayer" type="text/html`}
-          src={`https://www.youtube.com/embed/${category.videoId}?&loop=1&controls=1`}
-          frameBorder="0" allowFullScreen></iframe>
-
-          <div id="player"></div>
-          </div>
-        </>
       );
 }
