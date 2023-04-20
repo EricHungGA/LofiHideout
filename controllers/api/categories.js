@@ -4,12 +4,14 @@ module.exports = {
     getAll
   }
 
-async function getAll() {
+  async function getAll(req, res) {
+    let categories;
     try {
-        const categories = await Category.find({});
-        res.json(categories);
+      categories = await Category.find({});
     } catch (error) {
-        console.error('Could not find categories:', error);
-        res.status(500).send('Server error');
+      console.error('Could not find categories:', error);
+      res.status(500).send('Server error');
+      return;
     }
-}
+    res.json(categories);
+  }
