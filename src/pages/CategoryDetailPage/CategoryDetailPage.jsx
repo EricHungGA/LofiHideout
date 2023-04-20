@@ -26,17 +26,19 @@ export default function CategoryDetailPage({categories}) {
     
       return (
         <>
-        <div class="background-1"></div>
-        <div class="background-2"></div>
-          <div class="bg-layer-1">
-          {category.ambienceType}<br></br>
-          {category.name}
-          <iframe class=" w-128 h-64 border-8 border-slate-500/20 border-inset opacity-80 shadow-lg shadow-green-500/50" id="ytplayer" type="text/html" width="720" height="405"
+        <div class="background-image"></div>
+        <div class="background-ambience"></div>
+          <p class="text-sm font-medium uppercase tracking-widest text-indigo-400">
+          {category.ambienceType}
+          </p>          
+          <p class="text-xl font-bold text-white/60 sm:text-2xl tracking-wider">{category.name}</p>
+          <div class="flex justify-center">
+          <iframe class=" w-128 h-96 border-8 border-slate-500/20 border-inset opacity-80 shadow-lg shadow-amber-400/50 mt-4" id="ytplayer" type="text/html" width="720" height="405"
           src={`https://www.youtube.com/embed/${category.videoId}?&loop=1&controls=1`}
           frameBorder="0" allowFullScreen></iframe>
 
           <div id="player"></div>
-        </div>
+          </div>
         </>
       );
 }
