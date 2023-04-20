@@ -23,9 +23,7 @@ export default function CategoryDetailPage({categories}) {
     if (!category) {
         return <div>Loading...</div>;
       }
-      
-      console.log(category.bAmbienceOpacity)
-    
+          
       return (
         <>
   <div
