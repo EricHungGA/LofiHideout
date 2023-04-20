@@ -44,10 +44,11 @@ export default function CategoryDetailPage({categories}) {
     <p class="text-xl font-bold text-white/60 sm:text-2xl tracking-wider">{category.name}</p>
     <div class="flex justify-center">
       <iframe
+        allow="autoplay"
         class={`w-3/5 h-96 border-8 border-slate-500/20 border-inset opacity-80 shadow-lg shadow-${category.shadow}-400/50 mt-4`}
         id="ytplayer"
         type="text/html"
-        src={`https://www.youtube.com/embed/${category.videoId}?&loop=1&controls=1`}
+        src={`https://www.youtube.com/embed/${category.videoId}?&loop=1&autoplay=1&controls=1`}
         frameBorder="0"
         allowFullScreen
       ></iframe>

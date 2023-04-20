@@ -6,6 +6,7 @@ import NavBar from '../../components/NavBar/NavBar'
 import { getUser } from '../../utilities/users-service'
 import HomePage from '../HomePage/HomePage'
 import CategoryDetailPage from '../CategoryDetailPage/CategoryDetailPage'
+import * as categoriesAPI from '../../utilities/categories-api'
 
 export default function App() {
 
@@ -13,21 +14,16 @@ export default function App() {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    const fetchCategories = async() => {
+    async function fetchCategories() {
       try {
-        const response = await fetch('/api/categories');
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        const data = await response.json();
-        setCategories(data);
+        const categoryData = await categoriesAPI.getCategories();
+        setCategories(categoryData);
       } catch (error) {
         console.error('Error fetching categories:', error);
       }
-    };
-
+    }
     fetchCategories();
-  }, []);
+  },[]);
 
   return (
     <main className="App" class="scroll-smooth">
