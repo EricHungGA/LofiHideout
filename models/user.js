@@ -3,6 +3,12 @@ const Schema = mongoose.Schema;
 const SALT_ROUNDS = 6;
 const bcrypt = require('bcrypt')
 
+const requestFormSchema = new Schema({
+  roomDescription: {type: String},
+  soundtrack: {type: String},
+  imagery: {type: String}
+});
+
 const userSchema = new Schema({
   name: {type: String, required: true},
   email: {
@@ -17,7 +23,8 @@ const userSchema = new Schema({
     trim: true,
     minLength: 3,
     required: true
-  }
+  },
+  requestForms: [requestFormSchema]
 }, {
   timestamps: true,
   toJSON: {

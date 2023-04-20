@@ -4,7 +4,8 @@ const bcrypt = require('bcrypt')
 
 module.exports = {
   create,
-  login
+  login,
+  sendForm
 }
 
 async function create(req, res){
@@ -35,4 +36,17 @@ async function login(req, res){
  } catch {
   res.status(400).json('Bad Credentials');
  }
+}
+
+async function sendForm(req, res){
+  console.log('we are in controller', req.body)
+  try {
+    const user = await User.findById(req.user._id);
+    console.log(user);
+    user.requestForms.push(req.body);
+    const updatedUser = await user.save();
+    res.status(200).json('success')
+  } catch (error) {
+    res.status(400).json(error);
+  }
 }

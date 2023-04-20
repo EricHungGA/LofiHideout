@@ -10,16 +10,26 @@ const app = express();
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'dist')));
+app.use(require('./config/checkToken'));
 
 //home route
 // app.use('/', require('./routes/home'))
 //routes
 app.use('/api/categories', require('./routes/api/categories'));
 app.use('/api/users', require('./routes/api/users'));
+// app.use('/api/users/sendform', require('./routes/api/users'));
 //catch all
+
+// Error handler to check if route exists
+app.use(function (req, res) {
+  console.log(`route: ${req.path} does not exist`);
+  res.status(404, "route does not exist");
+});
+
 app.get('/*', function (req, res) {
   res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
+
 
 //listener
 const port = process.env.PORT || 3000;

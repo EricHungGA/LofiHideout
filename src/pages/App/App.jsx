@@ -7,6 +7,7 @@ import { getUser } from '../../utilities/users-service'
 import HomePage from '../HomePage/HomePage'
 import CategoryDetailPage from '../CategoryDetailPage/CategoryDetailPage'
 import * as categoriesAPI from '../../utilities/categories-api'
+import SendFormPage from '../SendFormPage/SendFormPage'
 
 export default function App() {
 
@@ -29,9 +30,10 @@ export default function App() {
     <main className="App" class="scroll-smooth">
           <NavBar user={user} setUser={setUser}/>
           <Routes>
-            <Route path="/" element={<HomePage categories={categories}/>} />
+            <Route path="/" element={<HomePage categories={categories} user={user}/>} />
             <Route path="/api/users/signup" element={<AuthPage setUser={setUser}/>} />
             <Route path="/room/:videoId" element={<CategoryDetailPage categories={categories}/>} />
+            <Route path="/sendForm" element={<SendFormPage user={user}/>} />
             {/* default redirect */}
             <Route path="*" element={<Navigate to="/"/>} />
           </Routes>
