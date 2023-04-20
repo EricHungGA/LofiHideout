@@ -10,5 +10,9 @@ router.post('/signup', usersCtrl.create);
 router.post('/login', usersCtrl.login);
 // POST /api/users/sendForm
 router.post('/sendform', usersCtrl.sendForm);
+// POST /api/users/deleteForm
+router.post('/deleteform', usersCtrl.deleteForm)
+// GET /api/users/getuserdata
+router.get('/getuserdata', usersCtrl.getUserData)
 
 module.exports = router;

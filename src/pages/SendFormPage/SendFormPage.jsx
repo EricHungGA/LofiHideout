@@ -4,14 +4,14 @@ import { sendForm } from '../../utilities/users-api';
 import { useNavigate } from 'react-router-dom';
 
 
-export default function SendFormPage() {
+export default function SendFormPage({setItemWasAdded}) {
     const [formData, setFormData] = useState({
         roomDescription: '',
         soundtrack: '',
         imagery: '',
       });
 
-      const navigate = useNavigate();
+    const navigate = useNavigate();
 
     const handleChange = (evt) => {
     setFormData({ ...formData, [evt.target.name]: evt.target.value });
@@ -23,7 +23,8 @@ export default function SendFormPage() {
             // const { ...data } = formData;
             const data = formData;
           //controller function here passing the data into it 
-            sendForm(data)
+            sendForm(data);
+            setItemWasAdded(false);
           navigate('/');
         } catch {
           setFormData({ ...formData, error: 'Form Submission Failed - Try Again' });

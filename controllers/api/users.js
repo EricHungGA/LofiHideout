@@ -5,7 +5,9 @@ const bcrypt = require('bcrypt')
 module.exports = {
   create,
   login,
-  sendForm
+  sendForm,
+  deleteForm,
+  getUserData
 }
 
 async function create(req, res){
@@ -50,3 +52,25 @@ async function sendForm(req, res){
     res.status(400).json(error);
   }
 }
+
+async function deleteForm(req, res){
+  const id = req.body.formId;
+  try {
+    const user = await User.findById(req.user._id);
+    const newForms = user.requestForms.filter((form) => form._id.toString() !== id);
+    user.requestForms = newForms;    
+    console.log(newForms);
+    await user.save();
+    res.status(200).json('success')
+  } catch (error) {
+    res.status(400).json(error);
+  }
+}
+
+async function getUserData(req, res) {
+  try {
+  const user = await User.findById(req.user._id);
+  res.json(user);
+} catch (error) {
+  res.status(400).json(error);
+}}

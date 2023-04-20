@@ -9,11 +9,15 @@ import CategoryDetailPage from '../CategoryDetailPage/CategoryDetailPage'
 import * as categoriesAPI from '../../utilities/categories-api'
 import SendFormPage from '../SendFormPage/SendFormPage'
 import MyFormPage from '../MyFormPage/MyFormPage'
+import { getUserData } from '../../utilities/users-api'
 
 export default function App() {
 
   const [user, setUser] = useState(getUser());
   const [categories, setCategories] = useState([]);
+  const [itemWasDeleted, setItemWasDeleted] = useState(true);
+  const [itemWasAdded, setItemWasAdded] = useState(true);
+
 
   useEffect(() => {
     async function fetchCategories() {
@@ -24,8 +28,16 @@ export default function App() {
         console.error('Error fetching categories:', error);
       }
     }
+
+    async function fetchUser() {
+      const currentUser = await getUserData();
+      setUser(currentUser);
+    }
+    setItemWasDeleted(true);
+    setItemWasAdded(true);
+    fetchUser();
     fetchCategories();
-  },[]);
+  },[itemWasDeleted, itemWasAdded]);
 
   return (
     <main className="App" class="scroll-smooth">
@@ -34,8 +46,8 @@ export default function App() {
             <Route path="/" element={<HomePage categories={categories} user={user}/>} />
             <Route path="/api/users/signup" element={<AuthPage setUser={setUser}/>} />
             <Route path="/room/:videoId" element={<CategoryDetailPage categories={categories}/>} />
-            <Route path="/sendForm" element={<SendFormPage user={user}/>} />
-            <Route path="/myforms" element={<MyFormPage user={user}/>} />
+            <Route path="/sendForm" element={<SendFormPage user={user} setItemWasAdded={setItemWasAdded}/>} />
+            <Route path="/myforms" element={<MyFormPage user={user} itemWasDeleted={itemWasDeleted} setItemWasDeleted={setItemWasDeleted}/>} />
             {/* default redirect */}
             <Route path="*" element={<Navigate to="/"/>} />
           </Routes>

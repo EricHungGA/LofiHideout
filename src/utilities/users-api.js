@@ -13,3 +13,11 @@ export function sendForm(data) {
   console.log(data);
   return sendRequest(`${BASE_URL}/sendform`, 'POST', data);
 }
+
+export function deleteForm(formId) {
+  return sendRequest(`${BASE_URL}/deleteform`, 'POST', formId)
+}
+
+export function getUserData() {
+  return sendRequest(`${BASE_URL}/getuserdata`)
+}
