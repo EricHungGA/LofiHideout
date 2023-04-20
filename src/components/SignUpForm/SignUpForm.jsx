@@ -42,7 +42,7 @@ export default function SignUpForm({setUser}) {
           <input class="text-neutral-300 rounded-md bg-neutral-500/50" type="email" name="email" value={formData.email} onChange={handleChange} required />
           <label class="mr-4 ml-4">Password</label>
           <input class="text-neutral-300 rounded-md bg-neutral-500/50" type="password" name="password" value={formData.password} onChange={handleChange} required />
-          <label class="text-neutral-300 mr-4 ml-4">Confirm</label>
+          <label class="mr-4 ml-4">Confirm</label>
           <input class="text-neutral-300 rounded-md bg-neutral-500/50" type="password" name="confirm" value={formData.confirm} onChange={handleChange} required />
           <button  class="rounded-xl border border-neutral-500/50 mr-4 ml-4 w-24 h-8 animate-fade-in-and-out shadow-lg shadow-blue-500/50" type="submit" disabled={disable}>SIGN UP</button>
         </form>

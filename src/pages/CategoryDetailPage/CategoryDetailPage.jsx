@@ -1,6 +1,6 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import './CategoryDetail.css'
 
 export default function CategoryDetailPage({categories}) {
@@ -8,22 +8,23 @@ export default function CategoryDetailPage({categories}) {
     const [category, setCategory] = useState(null);
 
     useEffect(() => {
-        async function fetchData() {
-            try {
-                const foundCategory = await categories.find((c) => c.videoId === videoId);
-                setCategory(foundCategory);
-            } catch (err) {
-                console.log(err);
-            }
+      async function fetchData() {
+        try {
+          const foundCategory = await categories.find((c) => c.videoId === videoId);
+          setCategory(foundCategory);
+        } catch (err) {
+          console.log(err);
         }
-        fetchData();
+      };
+
+      fetchData();
     }, [videoId, categories]);
 
     // need to use these conditional checks so that before the useEffect hook kicks in, we don't want it to load the initial null
     if (!category) {
         return <div>Loading...</div>;
       }
-          
+
       return (
         <>
   <div
@@ -35,6 +36,7 @@ export default function CategoryDetailPage({categories}) {
     style={{ backgroundImage: `url('${category.bAmbience}')` }}
     className={`background-ambience`}
   ></div>
+
   <div>
     <p class="text-sm font-medium uppercase tracking-widest text-indigo-400">
       {category.ambienceType}
@@ -52,7 +54,8 @@ export default function CategoryDetailPage({categories}) {
       <div id="player"></div>
     </div>
   </div>
+
 </>
 
-      );
+);
 }
