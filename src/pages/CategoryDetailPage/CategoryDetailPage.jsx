@@ -55,8 +55,6 @@ export default function CategoryDetailPage({categories}) {
       <div id="player"></div>
     </div>
   </div>
-
 </>
-
 );
 }

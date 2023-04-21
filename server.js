@@ -12,9 +12,6 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, 'dist')));
 app.use(require('./config/checkToken'));
 
-
-//home route
-// app.use('/', require('./routes/home'))
 //routes
 const ensureLoggedIn = require('./config/ensureLoggedIn');
 app.use('/api/categories', require('./routes/api/categories'));
@@ -34,7 +31,6 @@ app.use(function (req, res) {
 app.get('/*', function (req, res) {
   res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
-
 
 //listener
 const port = process.env.PORT || 3000;

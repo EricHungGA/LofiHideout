@@ -2,8 +2,6 @@ import React from 'react'
 import { deleteForm } from '../../utilities/users-api'
 import { Link } from 'react-router-dom'
 
-
-
 export default function SubmittedFormCard({form, itemWasDeleted, setItemWasDeleted}) {
     //unique form from form object ID
     const formId = form._id;

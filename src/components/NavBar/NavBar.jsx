@@ -5,8 +5,6 @@ import { Routes, Route } from 'react-router-dom';
 import './NavBar.css'
 import { useNavigate } from 'react-router-dom';
 
-
-
 export default function NavBar({user, setUser}) {
 
   const navigate = useNavigate();
@@ -19,18 +17,6 @@ export default function NavBar({user, setUser}) {
 
   return (
     <>
-    {/* <nav>
-      <Link to="/">Home</Link>
-      &nbsp; | &nbsp;
-      {user ? <Link onClick={handleLogOut}>LogOut</Link>
-      :
-      <>
-      <Link to="/api/users/signup">Login</Link>
-      </>
-  }
-     </nav> */}
-
-
 <div>
 	<div class="bg-transparent animate-fade-in-and-out">
     <div class="container mx-auto px-4">
@@ -41,11 +27,9 @@ export default function NavBar({user, setUser}) {
         <div class="hidden sm:flex sm:items-center text-center">
           <Link to="/" class="text-orange-200/40 text-2xl italic tracking-wide hover:text-neutral-700/90 mb-2 ml-8">Lofi Hideout</Link>
         </div>
-
         <div class="hidden sm:flex sm:items-center">
         {user ?
             <>
-            
             <a onClick={handleLogOut} class="text-slate-400/90 text-sm font-semibold border px-4 py-2 rounded-lg hover:text-indigo-600/70 hover:border-indigo-600/70">Logout</a>
             </>
             :

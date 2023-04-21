@@ -20,7 +20,6 @@ export default function App() {
   const [itemWasAdded, setItemWasAdded] = useState(true);
   const [itemWasUpdated, setItemWasUpdated] = useState(true);
 
-
   useEffect(() => {
     async function fetchCategories() {
       try {
@@ -60,7 +59,7 @@ export default function App() {
           </>
           :
           <AuthPage  setUser={setUser}/>
-}
+      }
     </main>
   )
 }

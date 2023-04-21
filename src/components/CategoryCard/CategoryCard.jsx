@@ -2,11 +2,9 @@ import React, { useState } from 'react'
 import './CategoryCard.css'
 import { Link } from 'react-router-dom'
 
-
 export default function CategoryCard({category}) {
-
   return (
-<>
+    <>
     <div class="flex justify-center animate-hover-slow">
     <div class="group relative block bg-black rounded-2xl h-128 w-72 border border-slate-400 transition overflow-hidden">
     <div class="ring-8 ring-slate-600 ring-inset absolute inset-0 rounded-2xl"></div>
