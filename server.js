@@ -19,8 +19,6 @@ app.use(require('./config/checkToken'));
 const ensureLoggedIn = require('./config/ensureLoggedIn');
 app.use('/api/categories', require('./routes/api/categories'));
 app.use('/api/users', require('./routes/api/users'));
-app.use('/api/users/sendform', ensureLoggedIn, require('./routes/api/users'));
-
 
 //catch all
 app.get('/*', function (req, res) {

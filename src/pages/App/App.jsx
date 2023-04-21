@@ -44,6 +44,8 @@ export default function App() {
 
   return (
     <main className="App" class="scroll-smooth">
+      {user ? 
+      <>
           <NavBar user={user} setUser={setUser}/>
           <Routes>
             <Route path="/" element={<HomePage categories={categories} user={user}/>} />
@@ -55,6 +57,10 @@ export default function App() {
             {/* default redirect */}
             <Route path="*" element={<Navigate to="/"/>} />
           </Routes>
+          </>
+          :
+          <AuthPage  setUser={setUser}/>
+}
     </main>
   )
 }

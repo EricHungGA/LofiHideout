@@ -25,7 +25,7 @@ export default function SendFormPage({setItemWasAdded}) {
           //controller function here passing the data into it 
             sendForm(data);
             setItemWasAdded(false);
-          navigate('/');
+          navigate('/myforms');
         } catch {
           setFormData({ ...formData, error: 'Form Submission Failed - Try Again' });
         }

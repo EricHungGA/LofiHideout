@@ -3,13 +3,18 @@ import { Link } from 'react-router-dom';
 import { logOut } from '../../utilities/users-service';
 import { Routes, Route } from 'react-router-dom';
 import './NavBar.css'
+import { useNavigate } from 'react-router-dom';
+
 
 
 export default function NavBar({user, setUser}) {
 
+  const navigate = useNavigate();
+
   function handleLogOut() {
     logOut();
     setUser(null);
+    navigate('/');
   }
 
   return (
