@@ -24,7 +24,6 @@ export default function CategoryCard({category}) {
         class="rounded-2xl absolute inset-0 object-cover h-full w-full"
       />
       </div>
-      </Link>
       <div class="relative p-4 sm:p-6 lg:p-8 ">
         <p class="text-sm font-medium uppercase tracking-widest text-indigo-400">
           {category.ambienceType}
@@ -39,6 +38,7 @@ export default function CategoryCard({category}) {
         </div>
         </div>
       </div>
+      </Link>
     </div>
   </div>
   </div>
