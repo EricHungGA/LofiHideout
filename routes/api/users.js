@@ -14,5 +14,7 @@ router.post('/sendform', usersCtrl.sendForm);
 router.post('/deleteform', usersCtrl.deleteForm)
 // GET /api/users/getuserdata
 router.get('/getuserdata', usersCtrl.getUserData)
+// PUT /api/users/updateform
+router.put('/updateform', usersCtrl.update)
 
 module.exports = router;

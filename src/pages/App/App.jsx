@@ -10,6 +10,7 @@ import * as categoriesAPI from '../../utilities/categories-api'
 import SendFormPage from '../SendFormPage/SendFormPage'
 import MyFormPage from '../MyFormPage/MyFormPage'
 import { getUserData } from '../../utilities/users-api'
+import MyFormEditPage from '../MyFormEditPage/MyFormEditPage'
 
 export default function App() {
 
@@ -17,6 +18,7 @@ export default function App() {
   const [categories, setCategories] = useState([]);
   const [itemWasDeleted, setItemWasDeleted] = useState(true);
   const [itemWasAdded, setItemWasAdded] = useState(true);
+  const [itemWasUpdated, setItemWasUpdated] = useState(true);
 
 
   useEffect(() => {
@@ -33,11 +35,12 @@ export default function App() {
       const currentUser = await getUserData();
       setUser(currentUser);
     }
+    setItemWasUpdated(true);
     setItemWasDeleted(true);
     setItemWasAdded(true);
     fetchUser();
     fetchCategories();
-  },[itemWasDeleted, itemWasAdded]);
+  },[itemWasDeleted, itemWasAdded, itemWasUpdated]);
 
   return (
     <main className="App" class="scroll-smooth">
@@ -48,6 +51,7 @@ export default function App() {
             <Route path="/room/:videoId" element={<CategoryDetailPage categories={categories}/>} />
             <Route path="/sendForm" element={<SendFormPage user={user} setItemWasAdded={setItemWasAdded}/>} />
             <Route path="/myforms" element={<MyFormPage user={user} itemWasDeleted={itemWasDeleted} setItemWasDeleted={setItemWasDeleted}/>} />
+            <Route path="/myforms/:formId" element={<MyFormEditPage user={user} setItemWasUpdated={setItemWasUpdated}/>} />
             {/* default redirect */}
             <Route path="*" element={<Navigate to="/"/>} />
           </Routes>

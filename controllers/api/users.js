@@ -7,7 +7,8 @@ module.exports = {
   login,
   sendForm,
   deleteForm,
-  getUserData
+  getUserData,
+  update
 }
 
 async function create(req, res){
@@ -59,7 +60,6 @@ async function deleteForm(req, res){
     const user = await User.findById(req.user._id);
     const newForms = user.requestForms.filter((form) => form._id.toString() !== id);
     user.requestForms = newForms;    
-    console.log(newForms);
     await user.save();
     res.status(200).json('success')
   } catch (error) {
@@ -74,3 +74,20 @@ async function getUserData(req, res) {
 } catch (error) {
   res.status(400).json(error);
 }}
+
+async function update(req, res) {
+  console.log('we are in update func controlers');
+  try {
+    const id = req.body.id;
+    const user = await User.findById(req.user._id);
+    const selectedForm = user.requestForms.find((form) => form._id.toString() === id);
+    selectedForm.roomDescription = req.body.roomDescription;
+    selectedForm.soundtrack = req.body.soundtrack;
+    selectedForm.imagery = req.body.imagery;
+
+    await user.save();
+    res.status(200).json('success updating the form!')
+} catch (error) {
+  res.status(400).json(error);
+}
+}

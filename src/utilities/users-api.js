@@ -21,3 +21,7 @@ export function deleteForm(formId) {
 export function getUserData() {
   return sendRequest(`${BASE_URL}/getuserdata`)
 }
+
+export function updateForm(data){
+  return sendRequest(`${BASE_URL}/updateform`, 'PUT', data)
+}
