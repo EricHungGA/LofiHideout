@@ -43,7 +43,7 @@ export default function SignUpForm({setUser}) {
           <input class="text-neutral-300 rounded-md bg-neutral-500/50" type="password" name="password" value={formData.password} onChange={handleChange} required />
           <label class="mr-4 ml-4">Confirm</label>
           <input class="text-neutral-300 rounded-md bg-neutral-500/50" type="password" name="confirm" value={formData.confirm} onChange={handleChange} required />
-          <button  class="rounded-xl border border-neutral-500/50 mr-4 ml-4 w-24 h-8 animate-fade-in-and-out shadow-lg shadow-blue-500/50" type="submit" disabled={disable}>SIGN UP</button>
+          <button  class="rounded-xl border border-neutral-500/50 mr-4 ml-4 w-24 h-8 animate-fade-in-and-out shadow-lg shadow-blue-500/50 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 hover:bg-indigo-500/40 duration-300" type="submit" disabled={disable}>SIGN UP</button>
         </form>
       </div>
       <p className="error-message">&nbsp;{formData.error}</p>

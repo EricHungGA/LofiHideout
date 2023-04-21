@@ -19,9 +19,9 @@ export default function SubmittedFormCard({form, itemWasDeleted, setItemWasDelet
       <p className="text-neutral-300 mb-4">Soundtrack: {form.soundtrack}</p>
       <p className="text-neutral-300 mb-4">Imagery: {form.imagery}</p>
       <Link to={`/myforms/${formId}`}>
-      <button class="rounded-2xl relative border border-indigo-700/90 text-indigo-700/90 p-2 mb-4">Edit Request</button>
+      <button class="rounded-2xl relative border border-indigo-700/90 text-indigo-700/90 p-2 mb-4 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 hover:bg-indigo-500/40 duration-300">Edit Request</button>
       </Link>
-      <button class="rounded-2xl relative border border-red-400/50 text-red-400/50 p-2" onClick={()=>handleDelete(formId)}>Delete Request</button>
+      <button class="rounded-2xl relative border border-red-400/50 text-red-400/50 p-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 hover:bg-red-500/40 duration-300" onClick={()=>handleDelete(formId)}>Delete Request</button>
     </div>
     </>
   );

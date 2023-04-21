@@ -23,10 +23,10 @@ export default function HomePage({categories, user}) {
     </div>
     <div class="mt-24">
     <h1 class="text-amber-500/50 mb-2">Want to see a new room?</h1>
-    <button onClick={handleFormClick} class="rounded-2xl border border-amber-500/80 text-amber-500/80 w-48 h-16">Send A Request</button>
+    <button onClick={handleFormClick} class="rounded-2xl border border-amber-500/80 text-amber-500/80 w-48 h-16 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 hover:bg-orange-500/40 duration-300">Send A Request</button>
     </div>
     {user ? 
-    <button onClick={() => navigate('/myforms')} class="rounded-2xl border border-indigo-500/80 text-indigo-500/80 w-48 h-16 mt-12">View My Requests</button>
+    <button onClick={() => navigate('/myforms')} class="rounded-2xl border border-indigo-500/80 text-indigo-500/80 w-48 h-16 mt-12 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 hover:bg-indigo-500/40 duration-300">View My Requests</button>
     :
     <div></div>
   }

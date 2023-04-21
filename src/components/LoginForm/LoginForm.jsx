@@ -34,7 +34,7 @@ export default function LoginForm({ setUser }) {
           <input class="text-neutral-300 rounded-md bg-neutral-500/50" type="text" name="email" value={credentials.email} onChange={handleChange} required />
           <label class="mr-4 ml-4">Password</label>
           <input class="text-neutral-300 rounded-md bg-neutral-500/50" type="password" name="password" value={credentials.password} onChange={handleChange} required />
-          <button class="rounded-xl border border-neutral-500/50 mr-4 ml-4 w-24 h-8 animate-fade-in-and-out shadow-lg shadow-blue-500/50" type="submit">LOG IN</button>
+          <button class="rounded-xl border border-neutral-500/50 mr-4 ml-4 w-24 h-8 animate-fade-in-and-out shadow-lg shadow-blue-500/50 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 hover:bg-indigo-500/40 duration-300" type="submit">LOG IN</button>
         </form>
       </div>
       <p className="error-message">&nbsp;{error}</p>

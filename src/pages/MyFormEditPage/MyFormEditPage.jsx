@@ -52,7 +52,7 @@ export default function MyFormEditPage({setItemWasUpdated}) {
             <label class="mr-4 ml-4 self-center">Imagery</label>
             <textarea class="text-neutral-300 rounded-md bg-neutral-500/50 self-center w-60 h-24" type="text" name="imagery" value={formData.imagery} onChange={handleChange} required />
             </div>
-            <button class="rounded-xl border border-neutral-500/50 mr-4 ml-4 w-24 h-8 animate-fade-in-and-out shadow-lg shadow-blue-500/50 self-center" type="submit">UPDATE</button>
+            <button class="rounded-xl border border-neutral-500/50 mr-4 ml-4 w-24 h-8 animate-fade-in-and-out shadow-lg shadow-blue-500/50 self-center transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 hover:bg-yellow-500/40 duration-300" type="submit">UPDATE</button>
         </form>
         </div>
         </div>
