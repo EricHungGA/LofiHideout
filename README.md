@@ -7,7 +7,7 @@ Lofi Hideout is a playful front-end focused website that offers rooms with uniqu
 
 This project is an extention of my urge to have a more immersive experience with the music I constantly use throughout my day to day tasks. 
 
-Built with the MERN stack, focus on React for 
+Built with the MERN stack, focus on React for the main framework and buildout, leaned heavily on tailwind for the design and animation.
 
 ## [View the Website](https://lofi-hideout.herokuapp.com/)
 
