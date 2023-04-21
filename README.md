@@ -66,3 +66,5 @@ Submitting Requests
 3. Embedding Video Playlists.
 
 4. Mobile Layout Responsiveness
+
+5. Allow users to add their own room and customize.
