@@ -37,13 +37,12 @@ export default function App() {
     setItemWasUpdated(true);
     setItemWasDeleted(true);
     setItemWasAdded(true);
-    fetchUser();
+    // fetchUser();
     fetchCategories();
   },[itemWasDeleted, itemWasAdded, itemWasUpdated]);
 
   return (
     <main className="App" class="scroll-smooth">
-      {user ? 
       <>
           <NavBar user={user} setUser={setUser}/>
           <Routes>
@@ -59,7 +58,6 @@ export default function App() {
           </>
           :
           <AuthPage  setUser={setUser}/>
-      }
     </main>
   )
 }
